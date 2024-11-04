@@ -15,9 +15,8 @@ import java.util.Iterator;
 import javax.swing.JPopupMenu;
 import javax.swing.undo.AbstractUndoableEdit;
 import javax.swing.undo.UndoableEdit;
-import org.jhotdraw.draw.AttributeKey;
-import org.jhotdraw.draw.AttributeKeys;
-import org.jhotdraw.draw.DrawingEditor;
+
+import org.jhotdraw.draw.*;
 import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.draw.figure.TextHolderFigure;
 import org.jhotdraw.draw.action.AbstractSelectedAction;
@@ -37,7 +36,7 @@ public class FontChooserHandler extends AbstractSelectedAction
     protected JFontChooser fontChooser;
     protected JPopupMenu popupMenu;
     protected int isUpdating;
-
+    protected String noFontAssertErr = "no font selected";
     /**
      * Creates a new instance.
      */
@@ -52,6 +51,16 @@ public class FontChooserHandler extends AbstractSelectedAction
     }
 
     @Override
+    public DrawingView getView() {
+        return super.getView();
+    }
+
+    @Override
+    public Drawing getDrawing() {
+        return super.getDrawing();
+    }
+
+    @Override
     public void actionPerformed(java.awt.event.ActionEvent evt) {
         if (evt.getActionCommand().equals(JFontChooser.APPROVE_SELECTION)) {
             applySelectedFontToFigures();
@@ -62,6 +71,9 @@ public class FontChooserHandler extends AbstractSelectedAction
     protected void applySelectedFontToFigures() {
         final ArrayList<Figure> selectedFigures = new ArrayList<>(getView().getSelectedFigures());
         final ArrayList<Object> restoreData = collectRestoreData(selectedFigures);
+
+        assert !selectedFigures.isEmpty() : "No selected figures";
+        assert fontChooser.getSelectedFont() != null : noFontAssertErr;
 
         applyFont(selectedFigures);
         getEditor().setDefaultAttribute(key, fontChooser.getSelectedFont());
@@ -79,6 +91,8 @@ public class FontChooserHandler extends AbstractSelectedAction
     }
 
     public void applyFont(ArrayList<Figure> selectedFigures) {
+        assert fontChooser.getSelectedFont() != null : noFontAssertErr;
+
         for (Figure figure : selectedFigures) {
             figure.willChange();
             figure.set(key, fontChooser.getSelectedFont());
@@ -87,6 +101,7 @@ public class FontChooserHandler extends AbstractSelectedAction
     }
 
     private UndoableEdit createUndoableEdit(ArrayList<Figure> selectedFigures, ArrayList<Object> restoreData) {
+        assert fontChooser.getSelectedFont() != null : noFontAssertErr;
         final Font undoValue = fontChooser.getSelectedFont();
         return new AbstractUndoableEdit() {
             private static final long serialVersionUID = 1L;

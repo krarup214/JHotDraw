@@ -67,9 +67,23 @@
 		<module>jhotdraw-xml</module>
 		<module>jhotdraw-api</module>
 		<module>jhotdraw-utils</module>
-	 <module>jhotdraw-gui</module>
-	 <module>jhotdraw-app</module>
-	 <module>jhotdraw-datatransfer</module>
-	 <module>jhotdraw-actions</module>
+		<module>jhotdraw-gui</module>
+		<module>jhotdraw-app</module>
+		<module>jhotdraw-datatransfer</module>
+		<module>jhotdraw-actions</module>
 	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.12.0</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>
