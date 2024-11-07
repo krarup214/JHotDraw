@@ -1,0 +1,83 @@
+{
+  "className": "org.jhotdraw.gui.action.FontChooserHandlerTestBDD",
+  "name": "Font Chooser Handler Test BDD",
+  "scenarios": [
+    {
+      "className": "org.jhotdraw.gui.action.FontChooserHandlerTestBDD",
+      "testMethodName": "setTextBold",
+      "description": "Set text bold",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "i have some text",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "i have some text"
+                },
+                {
+                  "value": "This is a test",
+                  "argumentInfo": {
+                    "argumentName": "text",
+                    "formattedValue": "This is a test"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 58258900,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "i enable bold",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "i enable bold"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 147400,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "the text should now be bold",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "the text should now be bold"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 62892300,
+              "depth": 0,
+              "parentFailed": false
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "durationInNanos": 155897500
+        }
+      ],
+      "casesAsTable": false,
+      "durationInNanos": 155897500
+    }
+  ],
+  "tagMap": {}
+}

@@ -1,0 +1,97 @@
+{
+  "className": "org.jhotdraw.draw.handle.FontSizeHandleTest",
+  "name": "Font Size Handle",
+  "scenarios": [
+    {
+      "className": "org.jhotdraw.draw.handle.FontSizeHandleTest",
+      "testMethodName": "settingCorrectFontSize",
+      "description": "Setting correct font size",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "i have a text of size x",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "i have a text of size x"
+                },
+                {
+                  "value": "15.0",
+                  "argumentInfo": {
+                    "argumentName": "givenSize",
+                    "formattedValue": "15.0"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 353735700,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "i enlargen the text",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "i enlargen the text"
+                },
+                {
+                  "value": "25.0",
+                  "argumentInfo": {
+                    "argumentName": "setFontSize",
+                    "formattedValue": "25.0"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 5002500,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "the text should be of size y",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "the text should be of size y"
+                },
+                {
+                  "value": "25.0",
+                  "argumentInfo": {
+                    "argumentName": "expectedSize",
+                    "formattedValue": "25.0"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 69880200,
+              "depth": 0,
+              "parentFailed": false
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "durationInNanos": 452089800
+        }
+      ],
+      "casesAsTable": false,
+      "durationInNanos": 452089800
+    }
+  ],
+  "tagMap": {}
+}
